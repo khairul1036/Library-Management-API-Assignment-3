@@ -3,7 +3,6 @@ import { Book } from "../models/book.model";
 
 export const booksRoutes = express.Router();
 
-
 // Create a book
 booksRoutes.post('/', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
@@ -28,7 +27,6 @@ booksRoutes.post('/', async (req: Request, res: Response, next: NextFunction): P
     }
   }
 });
-
 
 // Get all books with optional filter, sorting, and limit
 booksRoutes.get('/', async (req: Request, res: Response, next: NextFunction) => {
@@ -59,3 +57,50 @@ booksRoutes.get('/', async (req: Request, res: Response, next: NextFunction) => 
     next(error);
   }
 });
+
+//get a single book by id
+booksRoutes.get('/:bookId', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const book = await Book.findById(req.params.bookId);
+
+        res.status(book ? 200 : 404).json({
+            success: !!book,
+            message: book ? 'Book retrieved successfully' : 'Book not found',
+            data: book || null,
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+//update book by id
+booksRoutes.put('/:bookId', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const updatedBook = await Book.findByIdAndUpdate(req.params.bookId, req.body, { new: true, runValidators: true });
+
+        res.status(updatedBook ? 200 : 404).json({
+            success: !!updatedBook,
+            message: updatedBook ? 'Book updated successfully' : 'Book not found',
+            data: updatedBook || null,
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+//delete book by id
+booksRoutes.delete('/:bookId', async (req: Request, res: Response, next) => {
+    try {
+        const deletedBook = await Book.findByIdAndDelete(req.params.bookId);
+
+        res.status(deletedBook ? 200 : 404).json({
+            success: !!deletedBook,
+            message: deletedBook ? 'Book deleted successfully' : 'Book not found',
+            data: null,
+        });
+
+    } catch (error) {
+        next(error);
+    }
+});
+
