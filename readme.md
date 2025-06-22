@@ -7,7 +7,7 @@ A robust **Library Management System** built with **Express**, **TypeScript**, a
 
 - 🌐 [Live Link](https://library-management-backend-six.vercel.app/)
 - 👉 [GitHub Repo](https://github.com/khairul1036/Library-Management-API-Assignment-3)
-- ⏳ Video Link: Coming soon
+- ⏳ [Video Link](https://drive.google.com/file/d/1YoEw3Ja6axbs5nQouS28wmZPqt8gZuqz/view?usp=sharing)
 
 
 ## ✨ Features
