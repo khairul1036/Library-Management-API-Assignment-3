@@ -4,7 +4,7 @@ import { Borrow } from "../models/borrow.model";
 
 export const borrowRoutes = express.Router();
 
-//if book copy's are 0 then set book available to false
+//if book copy are 0 then set book available to false
 Book.schema.statics.updateAvailability = async function (bookId: string) {
     const book = await this.findById(bookId);
     if (!book) return;
@@ -83,7 +83,6 @@ borrowRoutes.post('/', async (req: Request, res: Response, next: NextFunction): 
 // get Borrowed Books Summary (Using Aggregation) 
 borrowRoutes.get('/', async (req: Request, res: Response, next) => {
     try {
-        //crete a aggregate to show borrow book information
         const summary = await Borrow.aggregate([
             {
                 $group: {
