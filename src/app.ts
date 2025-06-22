@@ -1,5 +1,5 @@
 import express, { Application, Request, Response } from "express";
-import { booksRoutes } from "./app/controllers/books.controller";
+import { booksRoutes } from "./app/controllers/book.controller";
 
 const app: Application = express();
 
