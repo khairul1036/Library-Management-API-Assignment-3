@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import { booksRoutes } from "./app/controllers/book.controller";
+import { errorHandler } from "./app/middlewares/errorHandler";
 
 const app: Application = express();
 
@@ -12,5 +13,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 
+// Error handler middleware
+app.use(errorHandler);
 
 export default app;
