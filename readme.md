@@ -2,9 +2,13 @@
 
 A robust **Library Management System** built with **Express**, **TypeScript**, and **MongoDB (via Mongoose)**. This API provides endpoints to manage books, handle borrowing operations, and generate summaries using MongoDB aggregation pipelines. It includes schema validation, business logic enforcement, Mongoose middleware, and custom methods for efficient library operations.
 
-## 🌐 Live Demo
 
-👉 [View Deployed App](https://library-management-backend-six.vercel.app/)
+## 📌 Submission Info
+
+- 🌐 [Live Link](https://library-management-backend-six.vercel.app/)
+- 👉 [GitHub Repo](https://github.com/khairul1036/Library-Management-API-Assignment-3)
+- ⏳ Video Link: Coming soon
+
 
 ## ✨ Features
 
