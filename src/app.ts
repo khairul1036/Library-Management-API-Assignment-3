@@ -12,7 +12,7 @@ const corsOptions = {
     "http://localhost:5173",
   ],
   credentials: true,
-  optionalSuccessStatus: 200,
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions))
